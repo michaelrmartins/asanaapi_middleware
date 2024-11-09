@@ -1,5 +1,6 @@
-const Asana = require('asana');
+// Service - Asana API Workspace
 
+const Asana = require('asana');
 let client = Asana.ApiClient.instance;
 let token = client.authentications['token'];
 token.accessToken = process.env.ASANA_TOKEN;
