@@ -6,6 +6,8 @@ let token = client.authentications['token'];
 token.accessToken = process.env.ASANA_TOKEN;
 const project_gid = process.env.ASANA_PROJECT_ID
 
+const { optsGetSections } = require('./opts/asana-optsParameters')
+
 async function getSections() {
     // Start Api Instance
     let sectionsApiInstance = new Asana.SectionsApi();
@@ -13,7 +15,7 @@ async function getSections() {
     // Parameters
     let opts = {
         'limit': 50,
-        'opt_fileds': "created_at,name,offset,path,project,project.name,projects,projects.name,uri"
+        'opt_fileds': optsGetSections
     
     }; // End opts
 

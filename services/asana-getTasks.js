@@ -6,13 +6,15 @@ let token = client.authentications['token'];
 token.accessToken = process.env.ASANA_TOKEN;
 const section_gid = process.env.ASANA_SECTION_ID
 
+const { optsGetTasks } = require('./opts/asana-optsParameters')
+
 async function getTasks() {
     // Start Api Instance
     let tasksApiInstance = new Asana.TasksApi();
     let opts = {
         'limit': 50,
         'completed_since': "2012-02-22T02:06:58.158Z", 
-        'opt_fields': "assignee.name,completed_by.name,created_at,created_by,name,notes"
+        'opt_fields': optsGetTasks
     }; // End opts
 
     // Main

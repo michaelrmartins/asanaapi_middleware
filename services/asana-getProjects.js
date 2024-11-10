@@ -5,6 +5,8 @@ let client = Asana.ApiClient.instance;
 let token = client.authentications['token'];
 token.accessToken = process.env.ASANA_TOKEN;
 
+const { optsGetProjects } = require('./opts/asana-optsParameters')
+
 async function getProject() {
     // Start Api Instance
     let projectsApiInstance = new Asana.ProjectsApi();
@@ -15,7 +17,7 @@ async function getProject() {
         'workspace': 1202026135844435,
         'team':"1202179066955855",
         'archived': false,
-        'opt_fields': "name"
+        'opt_fields': optsGetProjects
     };
 
     // Main
