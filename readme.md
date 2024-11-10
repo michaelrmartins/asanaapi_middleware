@@ -1,5 +1,7 @@
 # AsanaAPI Middleware
 
+![Asana Logo](asana-middleware-logo.jpeg)
+
 AsanaAPI Middleware é um projeto em Node.js desenvolvido para atuar como um middleware, facilitando o acesso e a integração com a API do Asana. Esse middleware permite consultar e gerenciar dados da plataforma Asana, possibilitando o desenvolvimento de aplicações que necessitam integrar informações da ferramenta de gerenciamento de tarefas.
 
 ## Descrição
