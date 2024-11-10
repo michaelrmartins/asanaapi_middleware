@@ -8,7 +8,7 @@ let token = client.authentications['token'];
 const { optsGetProjects } = require('./opts/asana-optsParameters')
 
 async function getProject(userToken, workspace_gid, team_gid) {
-    userToken = userToken
+    token.accessToken = userToken
     workspace_gid = workspace_gid
     team_gid = team_gid
     // Start Api Instance

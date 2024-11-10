@@ -9,7 +9,7 @@ let token = client.authentications['token'];
 const { optsGetTasks } = require('./opts/asana-optsParameters')
 
 async function getTasks(userToken, section_gid) {
-    userToken = userToken
+    token.accessToken = userToken
     section_gid = section_gid
     
     // Start Api Instance
@@ -22,7 +22,7 @@ async function getTasks(userToken, section_gid) {
 
     // Main
     try {
-        const result = tasksApiInstance.getTasksForSection(section_gid, opts);
+        const result = await tasksApiInstance.getTasksForSection(section_gid, opts);
         return result;
 
     } // End Try

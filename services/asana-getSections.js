@@ -9,7 +9,7 @@ let token = client.authentications['token'];
 const { optsGetSections } = require('./opts/asana-optsParameters')
 
 async function getSections(userToken, project_gid) {
-    userToken = userToken
+    token.accessToken = userToken
     project_gid = project_gid
     
     // Start Api Instance

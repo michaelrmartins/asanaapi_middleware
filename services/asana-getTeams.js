@@ -9,7 +9,7 @@ let token = client.authentications['token'];
 const { optsGetTeams } = require('./opts/asana-optsParameters')
 
 async function getTeams(userToken, workspace_gid) {
-    userToken = userToken
+    token.accessToken = userToken
     workspace_gid = workspace_gid
 
     let teamsApiInstance = new Asana.TeamsApi();
