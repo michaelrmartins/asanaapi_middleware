@@ -3,19 +3,22 @@
 const Asana = require('asana');
 let client = Asana.ApiClient.instance;
 let token = client.authentications['token'];
-token.accessToken = process.env.ASANA_TOKEN;
+// token.accessToken = process.env.ASANA_TOKEN;
 
 const { optsGetProjects } = require('./opts/asana-optsParameters')
 
-async function getProject() {
+async function getProject(userToken, workspace_gid, team_gid) {
+    userToken = userToken
+    workspace_gid = workspace_gid
+    team_gid = team_gid
     // Start Api Instance
     let projectsApiInstance = new Asana.ProjectsApi();
     
     // Parameters
     let opts = {
         'limit':50,
-        'workspace': 1202026135844435,
-        'team':"1202179066955855",
+        'workspace': workspace_gid,
+        'team':team_gid,
         'archived': false,
         'opt_fields': optsGetProjects
     };

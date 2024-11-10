@@ -3,12 +3,15 @@
 const Asana = require('asana');
 let client = Asana.ApiClient.instance;
 let token = client.authentications['token'];
-token.accessToken = process.env.ASANA_TOKEN;
-const section_gid = process.env.ASANA_SECTION_ID
+// token.accessToken = process.env.ASANA_TOKEN;
+// const section_gid = process.env.ASANA_SECTION_ID
 
 const { optsGetTasks } = require('./opts/asana-optsParameters')
 
-async function getTasks() {
+async function getTasks(userToken, section_gid) {
+    userToken = userToken
+    section_gid = section_gid
+    
     // Start Api Instance
     let tasksApiInstance = new Asana.TasksApi();
     let opts = {

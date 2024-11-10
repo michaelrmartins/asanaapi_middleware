@@ -3,14 +3,15 @@
 const Asana = require('asana');
 let client = Asana.ApiClient.instance;
 let token = client.authentications['token'];
-token.accessToken = process.env.ASANA_TOKEN;
-const workspace_gid = process.env.ASANA_WORKSPACE_GID
+// token.accessToken = process.env.ASANA_TOKEN;
+// const workspace_gid = process.env.ASANA_WORKSPACE_GID
 
 const { optsGetTeams } = require('./opts/asana-optsParameters')
 
-async function getTeams() {
-    console.log(workspace_gid)
-    // start Api Instance
+async function getTeams(userToken, workspace_gid) {
+    userToken = userToken
+    workspace_gid = workspace_gid
+
     let teamsApiInstance = new Asana.TeamsApi();
 
     let opts = {

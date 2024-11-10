@@ -3,12 +3,15 @@
 const Asana = require('asana');
 let client = Asana.ApiClient.instance;
 let token = client.authentications['token'];
-token.accessToken = process.env.ASANA_TOKEN;
-const project_gid = process.env.ASANA_PROJECT_ID
+// token.accessToken = process.env.ASANA_TOKEN;
+// const project_gid = process.env.ASANA_PROJECT_ID
 
 const { optsGetSections } = require('./opts/asana-optsParameters')
 
-async function getSections() {
+async function getSections(userToken, project_gid) {
+    userToken = userToken
+    project_gid = project_gid
+    
     // Start Api Instance
     let sectionsApiInstance = new Asana.SectionsApi();
 
