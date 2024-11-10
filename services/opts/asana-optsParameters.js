@@ -13,7 +13,7 @@ const optsGetSections = `
 
 const optsGetTasks = `
     assignee.name,completed_by.name,
-    created_at,created_by,name,notes
+    created_at,created_by,name,notes,tags.name,completed
 
 `; // End
 
