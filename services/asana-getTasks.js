@@ -15,7 +15,7 @@ async function getTasks(userToken, section_gid) {
     // Start Api Instance
     let tasksApiInstance = new Asana.TasksApi();
     let opts = {
-        'limit': 50,
+        'limit': 100,
         'completed_since': "2012-02-22T02:06:58.158Z", 
         'opt_fields': optsGetTasks
     }; // End opts
